@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import './MovieList.css'
 //Renvoie la liste des films 
 const MovieList = ()=>{
 
@@ -19,7 +20,7 @@ const MovieList = ()=>{
         // setIsLoaded(true);
         // setError(false);
         // setMovies(responseJson.results);
-        setMovies([])
+        setMovies([{movieId:1,title:"Film 1 "},{movieId:2,title:"Film 2"}])
         setIsLoaded(true)
       } catch (error) {
         setIsLoaded(true);
@@ -36,7 +37,7 @@ const MovieList = ()=>{
         return (
           <ul>
             {movies.map((movie) => (
-              <li key={movie.id}><Link to={'/movie/'+movie.id}>{movie.name}</Link></li>
+              <li key={movie.movieId}><Link className="list-link" to={'/movie/'+movie.movieId}>{movie.title}</Link></li>
             ))}
           </ul>
         );
