@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import {Link} from 'react-router-dom'
 import Header from './Header'
 import MovieList from './MovieList'
 import "./HomePage.css";
@@ -13,10 +14,10 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-        <Header/>
+          <Header/>
         
           <button className="button" onClick={getRecommendation}>Recevoir une recommendation</button>
-          {recommendation && (<p>recommendation</p>)} 
+          {recommendation && (<Link to={'/movie/'+recommendation.movieId}><p>{recommendation.title}</p></Link>)} 
 
           <h3>Liste de films : </h3>
           <MovieList/>

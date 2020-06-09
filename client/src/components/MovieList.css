@@ -1,3 +1,52 @@
 .list-link{
+    text-decoration:none;
+    color:white;
+    font-size:2rem;
+    font-weight:500;
+    transition : .3s font-size ease;
+}
+.list-link:hover{
+    font-size:2.5rem;
+}
+
+.movie-genres{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.movie-genre{
+    margin:.5rem;
+    
+}
+.movie-list-container{
+    margin:0 auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+.movie-container{
+    
+    background:black;
+    color:white;
+    margin:1rem;
+    width:25rem;
+    border-radius:1.5rem;
+    padding: .3rem;
+    text-align: center;
+}
+.pagination{
+    margin-top:auto;
+    width:100%;
+    margin-bottom:3rem;
+    
+    
+}
+.page-container{
+    
+    display:flex;
+    flex-direction: column;
+    height:100%;
     
 }
