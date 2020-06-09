@@ -15,3 +15,34 @@
     background: darkslategrey;
     cursor:pointer;
 }
+
+.previous-button{
+    width:10%;
+    float:left;
+    margin-left:39%;
+    
+    
+}
+.next-button.previous-button:hover{
+    cursor:pointer;
+}
+.next-button{
+    width:10%;
+    float:right;
+    margin-right:39%;
+    
+
+}
+
+.pagination-button{
+    background:#e00e0e;
+    color:white;
+    border:none;
+    border-radius:1.5rem;
+    height:3rem;
+}
+
+.pagination-button:hover{
+    cursor:pointer;
+    background: #b60505;
+}
