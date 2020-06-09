@@ -1,24 +1,28 @@
-import React from "react";
-import logo from "./logo.svg";
+import React,{useState} from "react";
+import {Link} from 'react-router-dom'
+import Header from './Header'
+import MovieList from './MovieList'
 import "./HomePage.css";
-
+import "./Button.css"
 const HomePage = () => {
+
+  const [recommendation,setRecommendation] = useState(null)
+  //Fonction pour recevoir une recommendation 
+  const getRecommendation = ()=>{
+
+  }
+
   return (
     <div className="HomePage">
-      <header className="HomePage-header">
-        <img src={logo} className="HomePage-logo" alt="logo" />
-        <p>
-          Edit <code>src/HomePage.js</code> and save to reload.
-        </p>
-        <a
-          className="HomePage-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <Header/>
+        
+          <button className="button" onClick={getRecommendation}>Recevoir une recommendation</button>
+          {recommendation && (<Link to={'/movie/'+recommendation.movieId}><p>{recommendation.title}</p></Link>)} 
+
+          <h3>Liste de films : </h3>
+          <MovieList/>
+        
+        
     </div>
   );
 };
