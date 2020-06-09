@@ -1,0 +1,19 @@
+.header{
+  background : #e00e0e;
+  flex:0 10vh;
+  z-index : 0;
+  width:100%;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  
+  
+}
+
+.header__title{
+    color : white;
+    font-size: 2.5rem;
+    margin: .4rem;
+}

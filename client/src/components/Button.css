@@ -1,0 +1,55 @@
+.button{
+    width:20rem;
+    height:5rem;
+    margin: 1.5rem auto;
+    border-radius:1.5rem;
+    border:3px outset grey;
+    font-size: 1.5rem;
+    font-weight:400;
+    color:white;
+    background:black;
+    transition: .3s background ease;
+}
+
+.button:hover{
+    background: darkslategrey;
+    cursor:pointer;
+}
+
+.button-link{
+    text-decoration:none;
+    padding: .2rem;
+    text-align:center;
+    height:2.5rem;
+}
+
+.previous-button{
+    width:10%;
+    float:left;
+    margin-left:39%;
+    
+    
+}
+.next-button.previous-button:hover{
+    cursor:pointer;
+}
+.next-button{
+    width:10%;
+    float:right;
+    margin-right:39%;
+    
+
+}
+
+.pagination-button{
+    background:#e00e0e;
+    color:white;
+    border:none;
+    border-radius:1.5rem;
+    height:3rem;
+}
+
+.pagination-button:hover{
+    cursor:pointer;
+    background: #b60505;
+}

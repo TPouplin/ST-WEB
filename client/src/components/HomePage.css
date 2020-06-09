@@ -1,0 +1,13 @@
+.HomePage {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position:fixed;
+  overflow:auto;
+  height: 100%;
+  width : 100vw;
+  
+}
+
+
+
