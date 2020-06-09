@@ -13,7 +13,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/demo">API Fetch demo</Link>
+              <Link to="/demo">Film Page</Link>
             </li>
           </ul>
         </nav>

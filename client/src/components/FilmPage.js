@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 
-const attributes = ["durée: ", "genre: ", "acteurs: ", "réalisateur: " ] + ["WIP"]*50
+var attributes = ["durée: ", "genre: ", "acteurs: ", "réalisateur: " ] + ["WIP"]*50;
 
 const FilmPage = () => {
   const [error, setError] = useState(null);
@@ -39,8 +39,8 @@ const FilmPage = () => {
     } else {
       return (
         <ul>
-          {items.map((item) => (
-            <li key={item.name,i}>{{attributes[i]} item.name}</li>
+          {items.map((item, i) => (
+            <li key={item.name}>{item.name}</li>
           ))}
         </ul>
       );
@@ -50,7 +50,7 @@ const FilmPage = () => {
   return (
     <div>
       <button onClick={triggerFetchAgain}>Fetch again</button>
-      {FilmPage()}
+      {Film()}
     </div>
   );
 };
