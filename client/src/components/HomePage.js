@@ -14,7 +14,7 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-        <Header/>
+          <Header/>
         
           <button className="button" onClick={getRecommendation}>Recevoir une recommendation</button>
           {recommendation && (<Link to={'/movie/'+recommendation.movieId}><p>{recommendation.title}</p></Link>)} 
