@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 
-const PokemonDisplayer = () => {
+
+var attributes = ["durée: ", "genre: ", "acteurs: ", "réalisateur: " ] + ["WIP"]*50;
+
+const FilmPage = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [fetchAgain, setFetchAgain] = useState(false);
   const triggerFetchAgain = () => setFetchAgain(!fetchAgain);
+
 
   const fetchExample = async () => {
     try {
@@ -27,7 +31,7 @@ const PokemonDisplayer = () => {
     // changes = strict egality, so beware when mutating objects
   }, [fetchAgain]);
 
-  const displayPokemons = () => {
+  const Film = () => {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -35,7 +39,7 @@ const PokemonDisplayer = () => {
     } else {
       return (
         <ul>
-          {items.map((item) => (
+          {items.map((item, i) => (
             <li key={item.name}>{item.name}</li>
           ))}
         </ul>
@@ -46,9 +50,9 @@ const PokemonDisplayer = () => {
   return (
     <div>
       <button onClick={triggerFetchAgain}>Fetch again</button>
-      {displayPokemons()}
+      {Film()}
     </div>
   );
 };
 
-export default PokemonDisplayer;
+export default FilmPage;
