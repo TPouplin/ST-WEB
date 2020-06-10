@@ -28,3 +28,24 @@ p {
 	text-decoration: none;
   font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
+
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* On mouse-over */
+.btn:hover {background: #eee;}
+
+.excellent {color: rgb(208, 53, 255);}
+.good {color: rgb(30, 123, 230);}
+.fair {color: rgb(0, 255, 13);}
+.bad {color: rgb(255, 153, 0);}
+.Vbad {color: rgb(255, 0, 0);}
+
+
