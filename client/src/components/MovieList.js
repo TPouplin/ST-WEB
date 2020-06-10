@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import './MovieList.css'
 import './Button.css'
+import FilmPage from "./FilmPage/FilmPage";
 //Renvoie la liste des films 
 const MovieList = ()=>{
 
@@ -62,24 +63,27 @@ const MovieList = ()=>{
         return <div>Chargement...</div>;
       } else {
         return (
-          <div className="page-container">
-            <div className="movie-list-container">
-              {movies.slice((page-1)*9,page*9).map((movie) => (
-                <div className="movie-container" key={movie.uuid}>
-                  <Link className="list-link" to={'/movie/'+movie.uuid}>{movie.name}</Link>
-                  <div className="movie-genres">
-                    {movie.tag.map((genre)=> (
-                      <p className="movie-genre">{genre}</p>
-                    ))}
+          <Router>     
+            <div className="page-container">
+              <div className="movie-list-container">
+                {movies.slice((page-1)*9,page*9).map((movie) => (
+                  <div className="movie-container" key={movie.uuid}>
+                    <Link className="list-link" to={'/movie/'+movie.uuid}>{movie.name}</Link>
+                    <Route path={"/movie/" + movie.uuid} > <FilmPage movie_id = {movie.uuid} /> </Route>
+                    <div className="movie-genres">
+                      {movie.tag.map((genre)=> (
+                        <p className="movie-genre">{genre}</p>
+                      ))}
+                    </div>
                   </div>
-                  </div>
-              ))}
-            </div>
-              <div className="pagination">
-                {page!==1 && (<button className="previous-button pagination-button" onClick={()=>setPage(page-1)}>Page précédente</button>)}
-                {(page!==Math.ceil(movies.length/9) &&movies.length>9) &&(<button className="next-button pagination-button" onClick={()=>setPage(page+1)}>Page suivante</button>)}
+                ))}
               </div>
-            </div>
+                <div className="pagination">
+                  {page!==1 && (<button className="previous-button pagination-button" onClick={()=>setPage(page-1)}>Page précédente</button>)}
+                  {(page!==Math.ceil(movies.length/9) &&movies.length>9) &&(<button className="next-button pagination-button" onClick={()=>setPage(page+1)}>Page suivante</button>)}
+                </div>
+              </div>
+            </Router>
         );
       }
     

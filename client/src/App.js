@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import FilmPage from "./components/FilmPage";
+import FilmPage from "./components/FilmPage/FilmPage";
 import HomePage from "./components/HomePage";
 
 function App() {
