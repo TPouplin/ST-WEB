@@ -1,0 +1,66 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-image:url('https://cdn.pixabay.com/photo/2019/11/07/20/48/cinema-4609877_1280.jpg')
+}
+
+.login-content{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align:center;
+    background:rgb(233, 233, 233);
+    padding:1rem;
+    border:1px solid grey;
+    border-radius:20px;
+    
+}
+
+.login-form{
+    display:flex;
+    flex-direction:row;
+    width:80%;
+    align-items: center;
+    margin: 0 auto;
+    opacity: 1;
+    
+    
+}
+
+.login-input{
+    width:80%;
+    flex-grow:1;
+    height:2rem;
+    padding:.5rem 1rem;
+    font-size:1rem;
+    border: 1px solid grey;
+    border-radius:5rem;
+    transition: .3s background ease;
+    margin:.5rem;
+    opacity: 1;
+}
+
+.login-input:focus{
+    background:rgba(128, 128, 128, 0.096);
+}
+
+.login-button{
+    border: 1px solid grey;
+    border-radius: 5rem;
+    width: 25%;
+    height:3rem;
+    margin: .5rem auto;
+    color:black;
+    transition: .3s background ease;
+    opacity: 1;
+}
+
+.login-button:hover{
+    background:lightgrey;
+    cursor:pointer;
+}
+

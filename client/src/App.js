@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PokemonDisplayer from "./components/PokemonDisplayer";
 import HomePage from "./components/HomePage";
 import NewMoviePage from './components/NewMoviePage';
+import LoginPage from './components/LoginPage'
+import {createBrowserHistory} from 'history'
+export const history = createBrowserHistory()
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
             <PokemonDisplayer />
           </Route>
           <Route exact path="/">
+            <LoginPage/>
+          </Route>
+          <Route exact path="/home">
             <HomePage />
           </Route>
           <Route exact path="/new_movie">
