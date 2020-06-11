@@ -15,17 +15,11 @@ function App() {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/demo">Film Page</Link>
-            </li>
           </ul>
         </nav>
         <Switch>
           <Route path = "/movie/:movieId">
             <FilmPage />
-          </Route>
-          <Route path="/demo">
-            <FilmPage props />
           </Route>
           <Route exact path="/">
             <LoginPage/>

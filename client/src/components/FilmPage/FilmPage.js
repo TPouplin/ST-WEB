@@ -4,15 +4,19 @@ import "./FilmPage.css";
 import {withRouter} from 'react-router-dom';
 
 
-var obj = {name:"Benjamin Button", genre:["Drama", "comedie", "romance"], actors: ["Brad Pitt", "Taraji P. Henson", "Tilda Swinton"], date:"2008"};
+
+/*var obj = {name:"Benjamin Button", genre:["Drama", "comedie", "romance"], actors: ["Brad Pitt", "Taraji P. Henson", "Tilda Swinton"], date:"2008"};*/
 const img_url = "https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png"
 
 
-const mailcode = (r) => {
-  fetch( "https://b6b8xoxbi0.execute-api.eu-west-1.amazonaws.com/dev/ratings", {method : "POST", 
-  body : JSON.stringify({pseudo: localStorage.getItem('pseudo'), movieId:obj.uuid.toString(), rate: r.toString()})}
+
+const mailcode = async (name, r) => {
+  alert("you have rated this movie " + r.toString() + " out of 5")
+  await fetch( "https://b6b8xoxbi0.execute-api.eu-west-1.amazonaws.com/dev/ratings", {method : "POST", 
+  body : JSON.stringify({pseudo: localStorage.getItem('pseudo'), name, rate: r.toString()})}
   )
 }
+
 
 const FilmPage = (props) => {
   /*
@@ -51,7 +55,7 @@ const FilmPage = (props) => {
       return <div>Loading...</div>;
     } else {
       */
-     obj = props.location.state.movie
+     var obj = props.location.state.movie
       return (
         <div>
           <div class = "hero">
@@ -64,11 +68,11 @@ const FilmPage = (props) => {
               {obj.tag.map((genre) => <li>{genre}</li>)}
             </ul>
             <h1>How did you find {obj.name} ?</h1>
-            <button class="btn Vbad" onClick = {mailcode(1)}>Very Bad</button>
-            <button class="btn bad" onClick = {mailcode(2)}>Bad</button>
-            <button class="btn fair" onClick = {mailcode(3)}>Fair</button>
-            <button class="btn good" onClick = {mailcode(4)}>Good</button>
-            <button class="btn excellent" onClick = {mailcode(5)} >Excellent </button> 
+            <button class="btn Vbad" onClick = {() => mailcode(obj.name, 1)}>Very Bad</button>
+            <button class="btn bad" onClick = {() => mailcode(obj.name, 2)}>Bad</button>
+            <button class="btn fair" onClick = {() => mailcode(obj.name, 3)}>Fair</button>
+            <button class="btn good" onClick =  {() => mailcode(obj.name, 4)}>Good</button>
+            <button class="btn excellent" onClick = {() => mailcode(obj.name, 5)} >Excellent </button> 
           </div>
         </div>
       );

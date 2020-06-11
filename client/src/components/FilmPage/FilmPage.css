@@ -1,20 +1,25 @@
 h1 {
 	font-size: 32px;
   font-family: Palatino, 'Palatino Linotype', serif;
-  color: rgb(122,67,98);
+  color: rgb(73, 5, 44);
+  background-size: initial ;
 }
 
 h2 {
-	font-size: 56px;
+  font-size: 56px;
+}
+
+ul {
+  font-size: 23px;
 }
 
 
 .hero {
 	padding: 250px 0;
 	margin: 30px;
-  /*background-image: url("https://s3.amazonaws.com/codecademy-content/projects/make-a-website/lesson-2/bg.jpg");*/
+  background-image: url("https://www.onceuponachef.com/images/2015/06/Crazy-Good-Spicy-Italian-Popcorn.jpg");
   background-size: cover;
-  color: rgb(122,67,98)
+  color: rgb(73, 5, 44)
 }
 
 
@@ -22,19 +27,12 @@ p {
   font-size: 2rem
 }
 
-.hero a {
-	color: #00FFAA;
-	font-size: 1.25em;
-	text-decoration: none;
-  font-family: 'Trebuchet MS', Helvetica, sans-serif;
-}
-
 
 .btn {
   border: none;
   background-color: inherit;
   padding: 14px 28px;
-  font-size: 16px;
+  font-size: 23px;
   cursor: pointer;
   display: inline-block;
 }
@@ -42,10 +40,10 @@ p {
 /* On mouse-over */
 .btn:hover {background: #eee;}
 
-.excellent {color: rgb(208, 53, 255);}
-.good {color: rgb(30, 123, 230);}
-.fair {color: rgb(0, 255, 13);}
-.bad {color: rgb(255, 153, 0);}
-.Vbad {color: rgb(255, 0, 0);}
+.excellent {color: rgb(96, 2, 124);}
+.good {color: rgb(1, 60, 128);}
+.fair {color: rgb(4, 112, 9);}
+.bad {color: rgb(87, 53, 2);}
+.Vbad {color: rgb(129, 3, 3);}
 
 
