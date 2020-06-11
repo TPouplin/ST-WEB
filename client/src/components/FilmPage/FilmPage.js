@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "../MovieList.js";
 import "./FilmPage.css";
+import {withRouter} from 'react-router-dom';
 
 
-var obj = {name:"Benjamin Button", director:"David Fisher", actors: ["Brad Pitt", "Taraji P. Henson", "Tilda Swinton"], year:"2008"};
-const img_url = "https://img.aws.la-croix.com/2017/01/08/1100815592/Lhistoire-homme-vieillard-meurt-nourrissonavoir-rebours_0_730_489.jpg"
-var rate = 0
+var obj = {name:"Benjamin Button", genre:["Drama", "comedie", "romance"], actors: ["Brad Pitt", "Taraji P. Henson", "Tilda Swinton"], date:"2008"};
+const img_url = "https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png"
 
 
-const FilmPage = () => {
+const mailcode = (r) => {
+  fetch( "https://b6b8xoxbi0.execute-api.eu-west-1.amazonaws.com/dev/ratings", {method : "POST", 
+  body : JSON.stringify({pseudo: localStorage.getItem('pseudo'), movieId:obj.uuid.toString(), rate: r.toString()})}
+  )
+}
+
+const FilmPage = (props) => {
+  /*
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -17,6 +24,7 @@ const FilmPage = () => {
 
 
   const fetchExample = async () => {
+    
     try {
       const response = await fetch("https://b6b8xoxbi0.execute-api.eu-west-1.amazonaws.com/dev/film/exemple2");
       const responseJson = await response.json();
@@ -42,27 +50,29 @@ const FilmPage = () => {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      
+      */
+     obj = props.location.state.movie
       return (
         <div>
           <div class = "hero">
             <link rel="stylesheet" type="text/css" href="FilmPage.css"/>
             <h2>{obj.name}</h2>
             <img src = {img_url}/>
-            <h1>produced in {obj.year} by {obj.director}</h1>
-            <h1> Actors </h1>
+            <h1>produced in {obj.date} </h1>
+            <h1> genres </h1>
             <ul>
-              {obj.actors.map((actor) => <li>{actor}</li>)}
+              {obj.tag.map((genre) => <li>{genre}</li>)}
             </ul>
             <h1>How did you find {obj.name} ?</h1>
-            <button class="btn Vbad" onClick = {rate = 1}>Very Bad</button>
-            <button class="btn bad" onClick = {rate = 2}>Bad</button>
-            <button class="btn fair" onClick = {rate = 3}>Fair</button>
-            <button class="btn good" onClick = {rate = 4}>Good</button>
-            <button class="btn excellent" onClick = {rate = 5} >Excellent</button> 
+            <button class="btn Vbad" onClick = {mailcode(1)}>Very Bad</button>
+            <button class="btn bad" onClick = {mailcode(2)}>Bad</button>
+            <button class="btn fair" onClick = {mailcode(3)}>Fair</button>
+            <button class="btn good" onClick = {mailcode(4)}>Good</button>
+            <button class="btn excellent" onClick = {mailcode(5)} >Excellent </button> 
           </div>
         </div>
       );
+      /*
     }
   };
             
@@ -72,7 +82,8 @@ const FilmPage = () => {
       {Film()}
     </div>
   );
+  */
 };
 
-export default FilmPage;
+export default withRouter(FilmPage);
 
