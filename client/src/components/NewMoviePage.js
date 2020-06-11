@@ -42,6 +42,12 @@ const NewMoviePage = ({history})=>{
                     })
                     
                 });
+                console.log(JSON.stringify({
+                    name,
+                    date:year,
+                    tag:send_tag,
+                    ...movie
+                }))
                 history.push('/home')
                 
     

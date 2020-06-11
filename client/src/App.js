@@ -4,8 +4,6 @@ import PokemonDisplayer from "./components/PokemonDisplayer";
 import HomePage from "./components/HomePage";
 import NewMoviePage from './components/NewMoviePage';
 import LoginPage from './components/LoginPage'
-import {createBrowserHistory} from 'history'
-export const history = createBrowserHistory()
 
 function App() {
   return (
@@ -27,6 +25,7 @@ function App() {
           <Route exact path="/new_movie">
             <NewMoviePage />
           </Route>
+          
         </Switch>
       </div>
     </Router>
