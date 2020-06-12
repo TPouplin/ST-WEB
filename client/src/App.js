@@ -10,13 +10,7 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
+        
         <Switch>
           <Route path = "/movie/:movieId">
             <FilmPage />

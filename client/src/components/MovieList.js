@@ -23,7 +23,7 @@ const MovieList = ()=>{
     const fetchMovies = async () => {
       try {
         //on recuperera ici la liste de films
-        const response = await fetch("https://nrxfc2lxz1.execute-api.eu-west-1.amazonaws.com/dev/list_f");
+        const response = await fetch("https://sbnv20jhh3.execute-api.eu-west-1.amazonaws.com/dev/list_f");
         const responseJson = await response.json();
         setIsLoaded(true);
         setError(false);
@@ -50,7 +50,7 @@ const MovieList = ()=>{
               {displayedMovies.slice((page-1)*9,page*9).map((movie) => (
                 <div className="movie-container" key={movie.uuid}>
                   <Link className="list-link"  to={{pathname:'/movie/'+movie.uuid,state:{movie}}}>{movie.name}</Link>
-                  <p>{movie.date}</p>
+                  <p className="movie-genre">{movie.date}</p>
                   <div className="movie-genres">
                     {movie.tag && movie.tag.map((genre)=> (
                       <p className="movie-genre" key={genre}>{genre}</p>

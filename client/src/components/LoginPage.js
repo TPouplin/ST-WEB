@@ -9,7 +9,7 @@ const LoginPage = ({history})=>{
         e.preventDefault()
         //on fait appel à l'api pour se connecter
 
-        await fetch('https://nrxfc2lxz1.execute-api.eu-west-1.amazonaws.com/dev/user',{method:"POST",body:JSON.stringify({pseudo:pseudo.toLowerCase()})})
+        await fetch('https://sbnv20jhh3.execute-api.eu-west-1.amazonaws.com/dev/user',{method:"POST",body:JSON.stringify({pseudo:pseudo.toLowerCase()})})
         console.log(pseudo)
         localStorage.setItem('pseudo',pseudo)
         history.push('/home')
@@ -18,7 +18,7 @@ const LoginPage = ({history})=>{
     return (
     <div className="login-container">
         <div className="login-content">
-            <h2>Connectez-vous pour accéder à des recommendations personalisées de films !</h2>
+            <h2>Connectez-vous pour accéder à movEI, la plateforme de recommandation de films !</h2>
             <form onSubmit = {onSubmit} className="login-form">
                 <h4>Votre pseudo : </h4>
                 <input className="login-input" type="text" value={pseudo} onChange={(e)=>{
