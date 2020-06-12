@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "jquery-csv": "^1.0.11",
     "uuid": "^8.1.0"
   },
   "devDependencies": {

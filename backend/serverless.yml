@@ -8,11 +8,8 @@ provider:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - dynamodb:Query
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-      Resource:
-        - 'Fn::GetAtt': [Table, Arn]
+        - dynamodb:*
+      Resource: "*"
   environment:
     tableName: ${self:service.name}-dynamodb
 
@@ -23,6 +20,24 @@ functions:
       - http:
           path: hello
           method: get
+  remove:
+    handler: functions/remove.handle
+    events:
+      - http:
+          method: get
+          path: remove/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+  remove_all:
+    handler: functions/remove_all.handle
+    events:
+      - http:
+          method: get
+          path: remove/all
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
 
   get:
     handler: functions/get.handle
@@ -30,6 +45,56 @@ functions:
       - http:
           method: get
           path: items/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+  get_film_by_name:
+    handler: functions/get_film_by_name.handle
+    events:
+      - http:
+          method: get
+          path: film/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+  
+  get_film_by_critere:
+    handler: functions/get_film_by_critere.handle
+    events:
+      - http:
+          method: get
+          path: film_critere/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  get_film_ratings:
+    handler: functions/get_film_ratings.handle
+    events:
+      - http:
+          method: get
+          path: film_ratings/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  get_user_ratings:
+    handler: functions/get_user_ratings.handle
+    events:
+      - http:
+          method: get
+          path: user_ratings/{id}
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+  
+  
+  recommandation:
+    handler: functions/recommandation.handle
+    events:
+      - http:
+          method: post
+          path: recommandation
           cors:
             origin: http://localhost:3000
             allowCredentials: true
@@ -43,6 +108,36 @@ functions:
           cors:
             origin: http://localhost:3000
             allowCredentials: true
+  
+  create_film:
+    handler: functions/create_film.handle
+    events:
+      - http:
+          method: post
+          path: film
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  create_user:
+    handler: functions/create_user.handle
+    events:
+      - http:
+          method: post
+          path: user
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  create_ratings:
+    handler: functions/create_ratings.handle
+    events:
+      - http:
+          method: post
+          path: ratings
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
 
   list:
     handler: functions/list.handle
@@ -53,6 +148,69 @@ functions:
           cors:
             origin: http://localhost:3000
             allowCredentials: true
+
+  list_film:
+    handler: functions/list_film.handle
+    events:
+      - http:
+          method: get
+          path: list_f
+          cors:
+            origin: http://localhost:3000          
+            allowCredentials: true
+
+  list_user:
+    handler: functions/list_user.handle
+    events:
+      - http:
+          method: get
+          path: list_u
+          cors:
+            origin: http://localhost:3000          
+            allowCredentials: true
+
+  estimation:
+    handler: functions/model_based.estimation
+    events:
+      - http:
+          method: post
+          path: estimation
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  import_film:
+    handler: functions/import_movie_lens.handle
+    events:
+      - http:
+          method: get
+          path: import_film
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  import_user:
+    handler: functions/import_user_lens.handle
+    events:
+      - http:
+          method: get
+          path: import_user
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+  import_rating:
+    handler: functions/import_rating_lens.handle
+    events:
+      - http:
+          method: get
+          path: import_rating
+          cors:
+            origin: http://localhost:3000
+            allowCredentials: true
+
+
+
 
 custom:
   stageVars: ${file(./stage.${self:provider.stage}.yml)}
