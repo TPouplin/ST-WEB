@@ -1,0 +1,49 @@
+h1 {
+	font-size: 32px;
+  font-family: Palatino, 'Palatino Linotype', serif;
+  color: rgb(73, 5, 44);
+  background-size: initial ;
+}
+
+h2 {
+  font-size: 56px;
+}
+
+ul {
+  font-size: 23px;
+}
+
+
+.hero {
+	padding: 250px 0;
+	margin: 30px;
+  background-image: url("https://www.onceuponachef.com/images/2015/06/Crazy-Good-Spicy-Italian-Popcorn.jpg");
+  background-size: cover;
+  color: rgb(73, 5, 44)
+}
+
+
+p {
+  font-size: 2rem
+}
+
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 23px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* On mouse-over */
+.btn:hover {background: #eee;}
+
+.excellent {color: rgb(96, 2, 124);}
+.good {color: rgb(1, 60, 128);}
+.fair {color: rgb(4, 112, 9);}
+.bad {color: rgb(87, 53, 2);}
+.Vbad {color: rgb(129, 3, 3);}
+
+
