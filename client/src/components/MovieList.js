@@ -50,7 +50,7 @@ const MovieList = ()=>{
               {displayedMovies.slice((page-1)*9,page*9).map((movie) => (
                 <div className="movie-container" key={movie.uuid}>
                   <Link className="list-link"  to={{pathname:'/movie/'+movie.uuid,state:{movie}}}>{movie.name}</Link>
-                  <p>{movie.date}</p>
+                  <p className="movie-genre">{movie.date}</p>
                   <div className="movie-genres">
                     {movie.tag && movie.tag.map((genre)=> (
                       <p className="movie-genre" key={genre}>{genre}</p>

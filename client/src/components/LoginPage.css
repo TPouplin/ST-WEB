@@ -13,11 +13,17 @@
     flex-direction:column;
     justify-content: center;
     text-align:center;
+    margin:auto auto;
     background:rgb(233, 233, 233);
     padding:1rem;
     border:1px solid grey;
     border-radius:20px;
     
+    
+}
+
+h2{
+    font-size:2rem;
 }
 
 .login-form{

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../MovieList.js";
 import "./FilmPage.css";
 import {withRouter} from 'react-router-dom';
+import Header from "../Header.js";
 
 
 
@@ -58,6 +59,7 @@ const FilmPage = (props) => {
      var obj = props.location.state.movie
       return (
         <div>
+          <Header/>
           <div class = "hero">
             <link rel="stylesheet" type="text/css" href="FilmPage.css"/>
             <h2>{obj.name}</h2>
