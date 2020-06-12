@@ -9,11 +9,7 @@ const HomePage = () => {
   const [recommendations,setRecommendations] = useState(null)
   const [displayRecommendation,setDisplayRecommendation] = useState(true)
   //Fonction pour recevoir une recommendation 
-<<<<<<< HEAD
-  const getRecommendation = async ()=>{
-=======
   const getRecommendations = async ()=>{
->>>>>>> 8787a9d1565b2e41677a55d04e3b3c09183f7ce9
     const response = await fetch("https://sbnv20jhh3.execute-api.eu-west-1.amazonaws.com/dev/recommandation",{method:"POST",body:JSON.stringify({user_id:localStorage.getItem('pseudo')})})
     const responseJson = await response.json()
     console.log(responseJson)
