@@ -6,14 +6,16 @@ module.exports.handle = async event => {
     }
 
     const dynamoDb = new DynamoDB.DocumentClient();
-    const result = await dynamoDb.scan({
+    const result = await dynamoDb.delete({
         TableName: process.env.tableName,
-
+        Key: {
+            type: event.type,
+            uuid: event.id,
+        },
     }).promise();
 
     return {
         statusCode: 200,
-        body: (result.Items),
+        body: "C'est supprimé !",
     }
 }
-
