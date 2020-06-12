@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom'
 import CreatableSelect from 'react-select/creatable'
 import Header from './Header'
 import './NewMoviePage.css'
-const NewMoviePage = ({history})=>{
+export const NewMoviePage = ({history})=>{
     const [name,setName] = useState('')
     const [year,setYear] = useState(2020)
     const [tag,setTag] = useState([])
@@ -42,6 +42,12 @@ const NewMoviePage = ({history})=>{
                     })
                     
                 });
+                console.log(JSON.stringify({
+                    name,
+                    date:year,
+                    tag:send_tag,
+                    ...movie
+                }))
                 history.push('/home')
                 
     
@@ -100,4 +106,3 @@ const NewMoviePage = ({history})=>{
 }
 
 export default withRouter(NewMoviePage)
-

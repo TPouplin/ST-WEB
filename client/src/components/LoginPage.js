@@ -31,5 +31,9 @@ const LoginPage = ({history})=>{
     </div>
     )
 }
+<<<<<<< HEAD
 export default withRouter(LoginPage)
 
+=======
+export default withRouter(LoginPage)
+>>>>>>> 4508c870878b153f73666c3f382299437313745c

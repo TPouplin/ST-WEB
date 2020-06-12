@@ -16,6 +16,13 @@
     cursor:pointer;
 }
 
+.button-link{
+    text-decoration:none;
+    padding: .2rem;
+    text-align:center;
+    height:2.5rem;
+}
+
 .previous-button{
     width:10%;
     float:left;
@@ -46,3 +53,4 @@
     cursor:pointer;
     background: #b60505;
 }
+

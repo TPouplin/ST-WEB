@@ -9,5 +9,19 @@
   
 }
 
+.recommendation-container{
+  background:black;
+  color:white;
+  margin:1rem auto;
+  width:25rem;
+  border-radius:1.5rem;
+  padding: .3rem;
+  text-align: center;
+}
+
+.recommendation-title{
+  text-align: center;
+}
+
 
 

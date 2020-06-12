@@ -18,12 +18,12 @@ const MovieList = ()=>{
     },[])
 
     useEffect(()=>{
-      setDisplayedMovies(movies.filter((movie)=>movie.name.toLowerCase().includes(search.toLowerCase())))
+      setDisplayedMovies(movies.filter((movie)=> (movie.name.toLowerCase().includes(search.toLowerCase()) && !movie.name.toLowerCase().includes('double vie') && !movie.name.toLowerCase().includes(', the'))))
     },[search,movies])
     const fetchMovies = async () => {
       try {
         //on recuperera ici la liste de films
-        const response = await fetch(" https://nrxfc2lxz1.execute-api.eu-west-1.amazonaws.com/dev/list_f");
+        const response = await fetch("https://nrxfc2lxz1.execute-api.eu-west-1.amazonaws.com/dev/list_f");
         const responseJson = await response.json();
         setIsLoaded(true);
         setError(false);
