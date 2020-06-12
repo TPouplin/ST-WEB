@@ -8,9 +8,12 @@ Resources:
                   AttributeType: S
                 - AttributeName: uuid
                   AttributeType: S
+
             KeySchema:
                 - AttributeName: type
                   KeyType: HASH
                 - AttributeName: uuid
                   KeyType: RANGE
+
+                  
             BillingMode: PAY_PER_REQUEST

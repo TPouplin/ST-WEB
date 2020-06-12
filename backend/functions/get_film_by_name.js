@@ -6,19 +6,29 @@ module.exports.handle = async event => {
     }
 
     const dynamoDb = new DynamoDB.DocumentClient();
-    const result = await dynamoDb.get({
+
+    const result = await dynamoDb.scan({
         TableName: process.env.tableName,
-        Key: {
-            type: 'movie',
-            uuid: event.pathParameters.id,
+        ProjectionExpression: "#na, #id, #da,tag ",
+        FilterExpression: "#na = :qna",
+        ExpressionAttributeNames: {
+            "#id": "uuid",
+            "#na":"name",
+            "#da":"data",
+        },
+        ExpressionAttributeValues: {
+            ":qna": event.pathParameters.id
         },
     }).promise();
 
-    // console.log(result.Item);
-    if (result.Item) {
+    if (result.Count) {
         return {
             statusCode: 200,
-            body: JSON.stringify(result.Item),
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': true,
+              },
+            body: JSON.stringify(result),
         }
     } else {
         return {
@@ -27,8 +37,7 @@ module.exports.handle = async event => {
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Credentials': true,
               },
-            body: 'Not found'
+            body: "pas de film trouvé",
         }
     }
-};
-
+}
