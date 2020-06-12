@@ -23,7 +23,7 @@ const MovieList = ()=>{
     const fetchMovies = async () => {
       try {
         //on recuperera ici la liste de films
-        const response = await fetch("https://sbnv20jhh3.execute-api.eu-west-1.amazonaws.com/dev/list_f");
+        const response = await fetch("https://bkhyigklqc.execute-api.eu-west-1.amazonaws.com/dev/list_f");
         const responseJson = await response.json();
         setIsLoaded(true);
         setError(false);

@@ -32,7 +32,7 @@ export const NewMoviePage = ({history})=>{
                   
         
                 
-                await fetch("https://sbnv20jhh3.execute-api.eu-west-1.amazonaws.com/dev/film",{
+                await fetch("https://bkhyigklqc.execute-api.eu-west-1.amazonaws.com/dev/film",{
                     method:"POST",
                     body:JSON.stringify({
                         name,

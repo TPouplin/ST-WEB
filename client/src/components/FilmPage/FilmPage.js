@@ -12,8 +12,8 @@ const img_url = "https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/0
 
 
 const mailcode = async (name, r) => {
-  alert("you have rated this movie " + r.toString() + " out of 5")
-  await fetch( "https://sbnv20jhh3.execute-api.eu-west-1.amazonaws.com/dev/ratings", {method : "POST", 
+  alert("Vous avez donné une note de " + r.toString() + " sur 5")
+  await fetch( "https://bkhyigklqc.execute-api.eu-west-1.amazonaws.com/dev/ratings", {method : "POST", 
   body : JSON.stringify({pseudo: localStorage.getItem('pseudo'), name, rate: r.toString()})}
   )
 }
