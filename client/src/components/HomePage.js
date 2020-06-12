@@ -10,7 +10,7 @@ const HomePage = () => {
   const [displayRecommendation,setDisplayRecommendation] = useState(true)
   //Fonction pour recevoir une recommendation 
   const getRecommendation = async ()=>{
-    const response = await fetch("https://b6b8xoxbi0.execute-api.eu-west-1.amazonaws.com/dev/recommandation",{method:"POST",body:JSON.stringify({user_id:"825d7340-ab2a-11ea-8213-3bd0267e5ce9"})})
+    const response = await fetch("https://nrxfc2lxz1.execute-api.eu-west-1.amazonaws.com/dev/recommandation",{method:"POST",body:JSON.stringify({user_id:localStorage.getItem('pseudo')})})
     const responseJson = await response.json()
     console.log(responseJson)
     if(responseJson.length>0) {

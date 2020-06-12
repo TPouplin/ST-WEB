@@ -9,7 +9,7 @@ const LoginPage = ({history})=>{
         e.preventDefault()
         //on fait appel à l'api pour se connecter
 
-        await fetch('https://b6b8xoxbi0.execute-api.eu-west-1.amazonaws.com/dev/user',{method:"POST",body:JSON.stringify({pseudo:pseudo.toLowerCase()})})
+        await fetch('https://nrxfc2lxz1.execute-api.eu-west-1.amazonaws.com/dev/user',{method:"POST",body:JSON.stringify({pseudo:pseudo.toLowerCase()})})
         console.log(pseudo)
         localStorage.setItem('pseudo',pseudo)
         history.push('/home')
