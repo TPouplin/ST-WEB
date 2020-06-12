@@ -62,16 +62,16 @@ const FilmPage = (props) => {
             <link rel="stylesheet" type="text/css" href="FilmPage.css"/>
             <h2>{obj.name}</h2>
             <img src = {img_url}/>
-            <h1>produced in {obj.date} </h1>
+            <h1>Publié en {obj.date} </h1>
             <h1> genres </h1>
             <ul>
               {obj.tag.map((genre) => <li>{genre}</li>)}
             </ul>
-            <h1>How did you find {obj.name} ?</h1>
-            <button class="btn Vbad" onClick = {() => mailcode(obj.name, 1)}>Very Bad</button>
-            <button class="btn bad" onClick = {() => mailcode(obj.name, 2)}>Bad</button>
-            <button class="btn fair" onClick = {() => mailcode(obj.name, 3)}>Fair</button>
-            <button class="btn good" onClick =  {() => mailcode(obj.name, 4)}>Good</button>
+            <h1>Comment avez vous trouvé {obj.name} ?</h1>
+            <button class="btn Vbad" onClick = {() => mailcode(obj.name, 1)}>Pitoyable</button>
+            <button class="btn bad" onClick = {() => mailcode(obj.name, 2)}>Mauvais</button>
+            <button class="btn fair" onClick = {() => mailcode(obj.name, 3)}>Acceptable</button>
+            <button class="btn good" onClick =  {() => mailcode(obj.name, 4)}>Bien</button>
             <button class="btn excellent" onClick = {() => mailcode(obj.name, 5)} >Excellent </button> 
           </div>
         </div>
